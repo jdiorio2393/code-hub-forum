@@ -70,3 +70,10 @@ exports.postLogin = (req, res, next) => {
 exports.getSession = (req, res, next) => {
   res.json(req.session);
 };
+
+exports.postLogout = (req, res, next) => {
+  req.session.destroy((err) => {
+    console.log(err);
+    res.redirect('/');
+  });
+};
