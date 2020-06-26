@@ -1,0 +1,81 @@
+.App {
+  background-color: #f4f4f4;
+  margin: 0px 30px;
+  /* padding-top: 3%; */
+  box-shadow: 1px 1px 15px #00000030;
+}
+
+.navbar {
+  margin: 0px 30px;
+  box-shadow: 0px -3px 10px #000000a8;
+}
+
+.post-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: normal;
+  justify-items: center;
+}
+
+.card {
+  justify-self: stretch;
+  /* width: 18rem !important; */
+  box-shadow: 1px 1px 9px #0000004a;
+  display: inline-block;
+}
+
+.card-img-top {
+  width: 18rem;
+}
+
+.card-body {
+  align-items: center !important;
+}
+
+.thread {
+  margin: auto;
+  display: block;
+  width: 75%;
+  margin-top: 3%;
+}
+
+.input-container {
+  padding-top: 5%;
+}
+
+input {
+  padding: 10px;
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+.select {
+  padding: 10px;
+  display: block;
+  width: 50%;
+  /* margin: auto; */
+}
+
+label {
+  margin: auto;
+  width: 50%;
+}
+
+.signup {
+  width: 50%;
+  margin: auto;
+}
+
+.form-check-input {
+  position: absolute;
+  top: 6%;
+  left: -22%;
+}
+
+.sticky {
+  background: white;
+  box-shadow: 1px 1px 15px #00000025;
+  position: fixed;
+  top: 10%;
+  right: 3%;
+}

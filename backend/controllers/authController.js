@@ -11,7 +11,7 @@ exports.signUp = (req, res, next) => {
   })
     .then((user) => {
       if (user) {
-        return res.redirect('/');
+        return res.redirect('/user-login');
       }
       return bcrypt
         .hash(password, 12)
