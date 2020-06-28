@@ -2,11 +2,12 @@ import React from 'react';
 import './App.css';
 import Home from './pages/home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Input from './components/input';
+import Input from './components/input/input';
 import Nav from './layout/navigation';
-import Signup from './components/Signup';
-import Login from './components/login';
-import AllPosts from './components/allPosts';
+import Signup from './components/auth/Signup';
+import Login from './components/auth/login';
+import AllPosts from './components/posts/allPosts';
+import User from './pages/User';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route exact path='/user-signup' component={Signup} />
         <Route exact path='/user-login' component={Login} />
         <Route exact path='/view-threads' component={AllPosts} />
+        <Route exact path='/user' render={User} />
       </Switch>
     </Router>
   );

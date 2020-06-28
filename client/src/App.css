@@ -10,6 +10,16 @@
   box-shadow: 0px -3px 10px #000000a8;
 }
 
+.logout {
+  background-color: #ffffff00;
+  opacity: 1;
+  border: 0px;
+}
+
+.hide {
+  display: none !important;
+}
+
 .post-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -78,4 +88,39 @@ label {
   position: fixed;
   top: 10%;
   right: 3%;
+}
+
+.glyphicon {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+small {
+  display: block;
+  line-height: 1.428571429;
+  color: #999;
+}
+
+.user-container {
+  display: grid;
+  grid-template-columns: 0.6fr 1.8fr;
+  grid-template-rows: 1.3fr 1.3fr;
+  gap: 1px 1px;
+  grid-template-areas: 'top Profile' 'bottom Profile';
+}
+
+.Profile {
+  grid-area: Profile;
+}
+
+.top {
+  grid-area: top;
+}
+
+.bottom {
+  grid-area: bottom;
+}
+
+.pull-right {
+  float: right !important;
 }

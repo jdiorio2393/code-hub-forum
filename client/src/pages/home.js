@@ -1,6 +1,6 @@
 import React from 'react';
-import Posts from '../components/posts';
-import Threads from '../components/threads';
+import Posts from '../components/posts/posts';
+import Threads from '../components/posts/threads';
 
 const Home = () => {
   return (

@@ -5,7 +5,7 @@ const Signup = () => {
     <div className='signup'>
       <form action='/signup' method='POST'>
         <div className='form-group'>
-          <label htmlfor='nameLabel'>Name</label>
+          <label htmlfor='nameLabel'>Username</label>
           <input
             type='text'
             className='form-control'

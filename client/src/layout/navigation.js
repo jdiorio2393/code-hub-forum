@@ -59,14 +59,24 @@ const Navigation = () => {
                 className='nav-link'
                 href='/view-threads'
                 tabIndex='-1'
-                aria-disabled='true'
+                // aria-disabled='true'
               >
                 View Posts
               </a>
             </li>
             <li className='nav-item'>
               <a
-                className={`nav-link ${loggedIn ? 'disabled' : ''}`}
+                className='nav-link'
+                href='/user'
+                tabIndex='-1'
+                // aria-disabled='true'
+              >
+                User Profile
+              </a>
+            </li>
+            <li className='nav-item'>
+              <a
+                className={`nav-link ${loggedIn ? 'disabled hide' : ''}`}
                 href='/user-login'
                 tabIndex='-1'
                 aria-disabled='true'
@@ -76,13 +86,27 @@ const Navigation = () => {
             </li>
             <li className='nav-item'>
               <a
-                className={`nav-link ${loggedIn ? 'disabled' : ''}`}
+                className={`nav-link ${loggedIn ? 'disabled hide' : ''}`}
                 href='/user-signup'
                 tabIndex='-1'
                 aria-disabled='true'
               >
                 Sign Up
               </a>
+            </li>
+            <li className='nav-item'>
+              <form action='/logout' method='POST'>
+                <button
+                  type='submit'
+                  className={`nav-link logout ${
+                    loggedIn ? '' : 'disabled hide'
+                  }`}
+                  tabIndex='-1'
+                  aria-disabled='true'
+                >
+                  Log Out
+                </button>
+              </form>
             </li>
 
             {/* <li className='nav-item dropdown'>
