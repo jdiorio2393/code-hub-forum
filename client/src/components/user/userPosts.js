@@ -1,127 +1,67 @@
-import React, { useEffect, useState } from 'react';
-import Axios from 'axios';
+import React, { Component } from 'react';
+import axios from 'axios';
+import UserPost from './userPost';
 
-const UserPosts = () => {
-  const [posts, setPosts] = useState('');
-  useEffect(() => {
-    Axios.get('http://localhost:3000/get-post').then((items) => {
-      if (!posts) {
-        setPosts([items]);
+class UserPosts extends Component {
+  state = {
+    posts: [],
+  };
+  componentDidMount() {
+    axios.get('http://localhost:3000/user-posts').then((userPosts) => {
+      if (!this.state.posts.allPosts) {
+        this.setState({
+          posts: [...this.state.posts, userPosts.data],
+        });
       }
+      // console.log(this.state.posts[0].allPosts);
+      // const a = this.state.posts[0].allPosts.map((i) => console.log(i));
+      // console.log(a);
+      console.log(this.state.posts[0][0]);
     });
-    console.log(posts);
-  });
-  return (
-    <div>
-      <div className='table-responsive'>
-        <table className='table table-hover'>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Label 1</th>
-              <th>Label 2</th>
-              <th>Label 3</th>
-            </tr>
-          </thead>
-          <tbody id='items'>
-            <tr>
-              <td>1</td>
-              <td>Table cell</td>
-              <td>Table cell</td>
-              <td>Table cell</td>
-            </tr>
-            {/* <tr>
-            <td>2</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr> */}
-          </tbody>
-        </table>
-        <hr></hr>
-        <div className='row'>
-          <div className='col-md-4 col-md-offset-4 text-center'>
-            <ul className='pagination' id='myPager'></ul>
-          </div>
+  }
+
+  render() {
+    // console.log('state' + this.state.posts);
+    // const items = this.state.posts.map((posts) => {
+    //   // console.log('posts' + JSON.stringify(posts));
+    //   posts.allPosts.map((items) => {
+    //     // console.log(items);
+    //     return <h1>AHHHH</h1>;
+    //   });
+    // });
+    // console.log(this.state);
+    const allPosts = this.state.posts.map((items) => {
+      return items.map((i, index) => {
+        console.log(i);
+        return (
+          <UserPost
+            key={i._id}
+            title={i.title}
+            description={i.description}
+            topic={i.topic}
+            index={index}
+          />
+        );
+      });
+    });
+    return (
+      <div className='random'>
+        <div class='table-responsive'>
+          <table class='table table-hover'>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>topic</th>
+              </tr>
+            </thead>
+            <tbody id='items'>{allPosts}</tbody>
+          </table>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default UserPosts;

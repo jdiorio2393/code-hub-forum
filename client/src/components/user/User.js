@@ -6,6 +6,19 @@ const UserProfile = () => {
   return (
     // Left profile table
     <div className='container'>
+      <div className='top-area'>
+        <div className='username'>
+          {' '}
+          <h1>User name</h1>
+        </div>
+        <div>
+          <img
+            className='profile-pic'
+            src='https://www.clipartmax.com/png/middle/318-3182943_admin-blank-user-profile.png'
+            alt='User Picture'
+          />
+        </div>
+      </div>
       <div className='user-container'>
         <div className='top'>
           <ul className='list-group'>
@@ -23,7 +36,7 @@ const UserProfile = () => {
 
           {/* activity table */}
 
-          <ul className='list-group pt-5'>
+          <ul className='list-group pt-3'>
             <li className='list-group-item text-muted'>
               Activity <i className='fa fa-dashboard fa-1x'></i>
             </li>
@@ -56,7 +69,7 @@ const UserProfile = () => {
 
         {/* main profile area */}
         <div className='profile'>
-          <Tabs defaultActiveKey='profile' id='uncontrolled-tab-example'>
+          <Tabs defaultActiveKey='Home' id='uncontrolled-tab-example'>
             <Tab eventKey='Home' title='Home'>
               <UserPosts />
             </Tab>

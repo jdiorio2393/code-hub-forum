@@ -124,3 +124,21 @@ small {
 .pull-right {
   float: right !important;
 }
+
+.top-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: '. .';
+}
+
+.profile-pic {
+  width: 50%;
+  float: right;
+  border-radius: 10px;
+}
+
+.username {
+  align-self: center;
+}

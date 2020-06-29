@@ -1,25 +1,15 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-const UserPost = () => {
+const UserPost = (props) => {
   return (
-    <div class='table-responsive'>
-      <table class='table table-hover'>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Label 1</th>
-            <th>Label 2</th>
-            <th>Label 3</th>
-          </tr>
-        </thead>
-        <tbody id='items'>
-          <tr>
-            <td>1</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-            <td>Table cell</td>
-          </tr>
-          {/* <tr>
+    <Fragment>
+      <tr>
+        <td>{props.index + 1}</td>
+        <td>{props.title}</td>
+        <td>{props.description}</td>
+        <td>{props.topic}</td>
+      </tr>
+      {/* <tr>
             <td>2</td>
             <td>Table cell</td>
             <td>Table cell</td>
@@ -100,15 +90,14 @@ const UserPost = () => {
             <td>Table cell</td>
             <td>Table cell</td>
           </tr> */}
-        </tbody>
-      </table>
-      <hr></hr>
-      <div class='row'>
+
+      {/* <hr></hr> */}
+      {/* <div class='row'>
         <div class='col-md-4 col-md-offset-4 text-center'>
           <ul class='pagination' id='myPager'></ul>
         </div>
-      </div>
-    </div>
+      </div> */}
+    </Fragment>
   );
 };
 
