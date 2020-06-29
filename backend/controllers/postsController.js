@@ -1,4 +1,5 @@
 const Post = require('../models/Post');
+const User = require('../models/User');
 
 exports.addPost = (req, res, next) => {
   const title = req.body.title;
@@ -41,4 +42,13 @@ exports.getLimitPosts = (req, res, next) => {
     .exec(function (err, posts) {
       res.json(posts);
     });
+};
+
+exports.userPosts = (req, res, next) => {
+  Post.find({
+    user: req.session.user.name,
+  }).then((items) => {
+    res.json(items);
+    console.log(items);
+  });
 };
