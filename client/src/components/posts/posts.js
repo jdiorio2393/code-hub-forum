@@ -12,7 +12,6 @@ class Posts extends Component {
       threads.data.map((items) => {
         return this.setState({ posts: [...this.state.posts, items] });
       });
-      console.log(this.state);
     });
   }
 
@@ -25,11 +24,13 @@ class Posts extends Component {
           description={items.description}
           topic={items.topic}
           key={items._id}
+          id={items._id}
         />
       );
     });
     return (
       <div className='container'>
+        <div className='featured'>Featured Today!</div>
         <div className='post-container'>{posts}</div>
       </div>
     );

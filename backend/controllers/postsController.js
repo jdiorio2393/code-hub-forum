@@ -38,7 +38,7 @@ exports.getPost = (req, res, next) => {
 exports.getLimitPosts = (req, res, next) => {
   Post.find()
     .sort({ date: -1 })
-    .limit(3)
+    .limit(4)
     .exec(function (err, posts) {
       res.json(posts);
     });

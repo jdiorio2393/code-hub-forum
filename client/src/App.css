@@ -22,13 +22,18 @@
 
 .post-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: normal;
   justify-items: center;
 }
 
+.featured {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
 .card {
-  justify-self: stretch;
+  justify-self: stretch !important;
   /* width: 18rem !important; */
   box-shadow: 1px 1px 9px #0000004a;
   display: inline-block;
@@ -40,6 +45,10 @@
 
 .card-body {
   align-items: center !important;
+}
+
+.grid-card {
+  justify-self: stretch;
 }
 
 .thread {
@@ -141,4 +150,20 @@ small {
 
 .username {
   align-self: center;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: 'main sidebar';
+}
+
+.main {
+  grid-area: main;
+}
+
+.sidebar {
+  grid-area: sidebar;
 }

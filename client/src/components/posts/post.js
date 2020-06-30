@@ -2,7 +2,11 @@ import React from 'react';
 
 const post = (props) => {
   return (
-    <div className='card' style={{ width: '18rem' }}>
+    <div
+      className='card grid-card'
+      id={props.id.substring(0, 5)}
+      style={{ width: '16rem' }}
+    >
       <img className='card-img-top' src='/coding.jpg' alt='Thread Img'></img>
       <div className='card-body text-center'>
         <h5 className='card-title text-center'>{props.title}</h5>

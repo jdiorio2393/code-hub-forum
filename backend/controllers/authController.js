@@ -69,12 +69,20 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.getSession = (req, res, next) => {
-  res.json(req.session);
+  res.send(req.session);
 };
 
 exports.postLogout = (req, res, next) => {
   req.session.destroy((err) => {
     console.log(err);
     res.redirect('/');
+  });
+};
+
+exports.getUser = (req, res, next) => {
+  User.find({
+    name: req.session.user.name,
+  }).then((user) => {
+    res.send(user);
   });
 };

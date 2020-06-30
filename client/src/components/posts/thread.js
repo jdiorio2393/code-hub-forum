@@ -2,7 +2,7 @@ import React from 'react';
 
 const Thread = (props) => {
   return (
-    <div className='card thread'>
+    <div className='card mb-2' id={props.id} style={{ width: '98%' }}>
       <div className='card-header'>{props.user}</div>
       <div className='card-body'>
         <h5 className='card-title'>{props.title}</h5>
