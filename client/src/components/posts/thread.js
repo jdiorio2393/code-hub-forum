@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const Thread = (props) => {
   return (
@@ -10,6 +10,16 @@ const Thread = (props) => {
         <a href='/' className='btn btn-primary'>
           Go somewhere
         </a>
+        {props.buttons ? (
+          <Fragment>
+            <a href={`/edit/${props.id}`} className='btn btn-primary ml-2'>
+              Edit Post
+            </a>
+            <a href='/' className='btn btn-primary ml-2'>
+              Delete Post
+            </a>
+          </Fragment>
+        ) : null}
         <p className='card-text'>{props.topic}</p>
       </div>
     </div>

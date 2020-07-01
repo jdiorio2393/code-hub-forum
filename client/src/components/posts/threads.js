@@ -19,7 +19,7 @@ class threads extends Component {
     });
     axios.get('http://localhost:3000/get-user').then((user) => {
       if (this.state.user.length === 0) {
-        console.log(user.data[0].name);
+        // console.log(user.data[0].name);
         return this.setState({ user: [...this.state.user, user.data[0].name] });
       }
     });
@@ -35,7 +35,8 @@ class threads extends Component {
           topic={items.topic}
           user={items.user}
           key={items._id}
-          user={this.state.user}
+          // eslint-disable-next-line
+          buttons={this.state.user == items.user ? true : false}
         />
       );
     });
