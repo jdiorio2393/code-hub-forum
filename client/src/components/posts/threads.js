@@ -25,6 +25,14 @@ class threads extends Component {
     });
   }
 
+  handleDelete = (id) => {
+    // e.preventDefault();
+    axios.delete(`http://localhost:5000/${id}`).catch((err) => {
+      console.log(err);
+    });
+    window.location.reload();
+  };
+
   render() {
     const posts = this.state.threads.slice(-4).map((items) => {
       return (
@@ -35,6 +43,10 @@ class threads extends Component {
           topic={items.topic}
           user={items.user}
           key={items._id}
+          url={items.imageUrl}
+          id={items._id}
+          clicked={this.handleDelete}
+          comment={false}
           // eslint-disable-next-line
           buttons={this.state.user == items.user ? true : false}
         />

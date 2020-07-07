@@ -16,7 +16,7 @@ class UserPosts extends Component {
       // console.log(this.state.posts[0].allPosts);
       // const a = this.state.posts[0].allPosts.map((i) => console.log(i));
       // console.log(a);
-      console.log(this.state.posts[0][0]);
+      // console.log(this.state.posts[0][0]);
     });
   }
 
@@ -32,7 +32,7 @@ class UserPosts extends Component {
     // console.log(this.state);
     const allPosts = this.state.posts.map((items) => {
       return items.map((i, index) => {
-        console.log(i);
+        // console.log(i);
         return (
           <UserPost
             key={i._id}
@@ -46,8 +46,8 @@ class UserPosts extends Component {
     });
     return (
       <div className='random'>
-        <div class='table-responsive'>
-          <table class='table table-hover'>
+        <div className='table-responsive'>
+          <table className='table table-hover'>
             <thead>
               <tr>
                 <th>#</th>

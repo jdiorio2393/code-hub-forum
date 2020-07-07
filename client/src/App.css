@@ -1,13 +1,13 @@
 .App {
-  background-color: #f4f4f4;
-  margin: 0px 30px;
+  background-color: #dae0e6;
+  /* margin: 0px 30px; */
   /* padding-top: 3%; */
-  box-shadow: 1px 1px 15px #00000030;
+  /* box-shadow: 1px 1px 15px #00000030; */
 }
 
 .navbar {
-  margin: 0px 30px;
-  box-shadow: 0px -3px 10px #000000a8;
+  /* margin: 0px 30px;
+  box-shadow: 0px -3px 10px #000000a8; */
 }
 
 .logout {
@@ -41,6 +41,14 @@
 
 .card-img-top {
   width: 18rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: '. .';
 }
 
 .card-body {
@@ -166,4 +174,51 @@ small {
 
 .sidebar {
   grid-area: sidebar;
+}
+
+.delete-form {
+  display: inline-block;
+}
+
+.post-comment {
+  /* display: inline-flex; */
+  /* padding: 10px 0% 10px 10%; */
+  width: 100%;
+}
+
+img.profile-photo-sm {
+  height: auto;
+  max-width: 100%;
+  /* border-radius: 50%; */
+  /* margin-left: -10px; */
+  object-fit: cover;
+}
+
+.comment-body {
+  padding: 10px 20px 5px 10px !important;
+}
+
+.comment-grid {
+  display: grid;
+  grid-template-columns: 0.12fr 1.2fr;
+  grid-template-rows: 1fr;
+  gap: 1px 1px;
+  grid-template-areas: 'comment-pic comment-area comment-area comment-area';
+}
+
+.comment-area {
+  grid-area: comment-area;
+}
+
+.comment-pic {
+  grid-area: comment-pic;
+  align-self: center;
+  justify-self: center;
+}
+
+.picture {
+  background-image: url('https://bootdey.com/img/Content/avatar/avatar1.png') !important;
+  height: 100px;
+  width: auto;
+  background-repeat: repeat-x;
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Input = (props) => {
-  console.log(props.location.state.user.name);
+  // console.log(props.location.state.user.name);
 
   return (
     <div className='input-container'>
@@ -19,11 +19,8 @@ const Input = (props) => {
           <option>Back End</option>
           <option>Machine Learning</option>
         </select>
-        <input
-          type='hidden'
-          value={props.location.state.user.name}
-          name='user'
-        ></input>
+        <input type='hidden' value={props.user} name='user'></input>
+        <input type='hidden' value={props.id} name='userId'></input>
         <button className='btn btn-primary' type='submit'>
           Create Thread
         </button>
