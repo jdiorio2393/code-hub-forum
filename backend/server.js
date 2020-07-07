@@ -24,6 +24,7 @@ app.use(cors({ credentials: true }));
 
 const postData = require('./routes/posts');
 const authData = require('./routes/auth');
+const commentData = require('./routes/comments');
 
 app.use(express.json({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,6 +54,7 @@ app.use((req, res, next) => {
 
 app.use(postData);
 app.use(authData);
+app.use(commentData);
 
 const PORT = process.env.port || 5000;
 

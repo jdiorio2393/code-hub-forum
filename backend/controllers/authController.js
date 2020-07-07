@@ -69,7 +69,7 @@ exports.postLogin = (req, res, next) => {
 };
 
 exports.getSession = (req, res, next) => {
-  res.send(req.session);
+  res.json(req.session);
 };
 
 exports.postLogout = (req, res, next) => {
