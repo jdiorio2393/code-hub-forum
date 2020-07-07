@@ -65,7 +65,11 @@ const Thread = (props) => {
         <div>
           <img
             style={{ 'max-width': '100%', height: 'auto' }}
-            src={props.imageUrl}
+            src={
+              props.imageUrl.includes('https') === true
+                ? props.imageUrl
+                : 'https://lh3.googleusercontent.com/proxy/s4ULXWRLce8ZxWSMwvWmhdtPDwitqJbz63_DYFpbQ-8OH_FBwegoVkad6LnSELrsr1d88HfJX-77sMKS-WYmjd3NsaAHrV_kOpe0ljIwCjG8jEDFjDN7i5c4-y7HfcyO3t3nYFRqOeyxuLUWpRIFQp1DGpsEXFdcyMyrHJgFaL_b'
+            }
             alt='Thread Picture'
           />
         </div>

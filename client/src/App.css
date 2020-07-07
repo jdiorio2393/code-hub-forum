@@ -5,11 +5,6 @@
   /* box-shadow: 1px 1px 15px #00000030; */
 }
 
-.navbar {
-  /* margin: 0px 30px;
-  box-shadow: 0px -3px 10px #000000a8; */
-}
-
 .logout {
   background-color: #ffffff00;
   opacity: 1;
@@ -25,6 +20,17 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: normal;
   justify-items: center;
+}
+
+.post-container div:nth-child(4) {
+  justify-self: end !important;
+}
+
+.post-container div:nth-child(3) {
+  justify-self: center !important;
+}
+.post-container div:nth-child(2) {
+  justify-self: center !important;
 }
 
 .featured {

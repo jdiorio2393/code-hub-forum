@@ -16,6 +16,7 @@ const PostPage = (props) => {
         user={props.location.state.user}
         title={props.location.state.title}
         description={props.location.state.description}
+        imageUrl={props.location.state.url}
         comment={true}
       />
       <Comments threadId={props.location.state.id} />

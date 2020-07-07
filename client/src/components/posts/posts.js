@@ -13,6 +13,14 @@ class Posts extends Component {
         return this.setState({ posts: [...this.state.posts, items] });
       });
     });
+    var url =
+      'http://newsapi.org/v2/top-headlines?' +
+      'sources=bbc-news&' +
+      'apiKey=74e3ff8a6e6e49b0a032fb9ab12cba45';
+    var req = new Request(url);
+    fetch(req).then(function (response) {
+      console.log(response.json());
+    });
   }
 
   render() {
