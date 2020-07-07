@@ -4,7 +4,7 @@ const post = (props) => {
   return (
     <div
       className='card grid-card'
-      id={props.id.substring(0, 5)}
+      // id={props.id.substring(0, 5)}
       style={{ width: '16rem' }}
     >
       <img className='card-img-top' src='/coding.jpg' alt='Thread Img'></img>
