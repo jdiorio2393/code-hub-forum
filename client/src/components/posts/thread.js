@@ -7,7 +7,10 @@ const Thread = (props) => {
       className='card mb-2'
       id={props.id}
       style={
-        window.location.pathname == '/' ? { width: '98%' } : { width: '100%' }
+        window.location.pathname == '/' ||
+        window.location.pathname == '/view-threads'
+          ? { width: '98%' }
+          : { width: '100%' }
       }
     >
       <div className='card-header'>{props.user}</div>
@@ -27,7 +30,7 @@ const Thread = (props) => {
                 url: props.url,
               },
             }}
-            className='btn btn-primary'
+            className='btn btn-primary mr-2'
           >
             View Thread
           </Link>
@@ -45,7 +48,7 @@ const Thread = (props) => {
                     url: props.url,
                   },
                 }}
-                className='btn btn-primary ml-2'
+                className='btn btn-primary mr-2'
               >
                 Edit Post
               </Link>
@@ -53,7 +56,7 @@ const Thread = (props) => {
                 <input type='hidden' value={props.id} name='postId'></input>
                 <a
                   onClick={() => props.clicked(props.id)}
-                  className='btn btn-primary ml-2 text-white'
+                  className='btn btn-primary text-white'
                 >
                   Delete Post
                 </a>
@@ -68,7 +71,7 @@ const Thread = (props) => {
             src={
               props.imageUrl.includes('https') === true
                 ? props.imageUrl
-                : 'https://lh3.googleusercontent.com/proxy/s4ULXWRLce8ZxWSMwvWmhdtPDwitqJbz63_DYFpbQ-8OH_FBwegoVkad6LnSELrsr1d88HfJX-77sMKS-WYmjd3NsaAHrV_kOpe0ljIwCjG8jEDFjDN7i5c4-y7HfcyO3t3nYFRqOeyxuLUWpRIFQp1DGpsEXFdcyMyrHJgFaL_b'
+                : '/codingpic.jpg'
             }
             alt='Thread Picture'
           />

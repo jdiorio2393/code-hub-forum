@@ -9,6 +9,8 @@ router.get('/get-top-posts', postController.getLimitPosts);
 
 router.get('/user-posts', postController.userPosts);
 
+router.get('/count-posts', postController.countPosts);
+
 // router.get('/:id', postController.getSinglePost);
 
 router.post('/add-post', postController.addPost);

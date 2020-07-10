@@ -2,14 +2,14 @@ import React from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import UserPosts from './userPosts';
 
-const UserProfile = () => {
+const UserProfile = (props) => {
   return (
     // Left profile table
     <div className='container'>
       <div className='top-area'>
         <div className='username'>
           {' '}
-          <h1>User name</h1>
+          <h1>{props.user}</h1>
         </div>
         <div>
           <img
@@ -24,13 +24,13 @@ const UserProfile = () => {
           <ul className='list-group'>
             <li className='list-group-item text-muted'>Profile</li>
             <li className='list-group-item'>
-              Joined <span className='pull-right'>*DATE*</span>
+              Joined <span className='pull-right'>7/9/20</span>
             </li>
             <li className='list-group-item'>
-              Joined <span className='pull-right'>*DATE*</span>
+              Username <span className='pull-right'>{props.user}</span>
             </li>
             <li className='list-group-item'>
-              Joined <span className='pull-right'>*DATE*</span>
+              Email <span className='pull-right'>{props.email}</span>
             </li>
           </ul>
 

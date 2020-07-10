@@ -90,9 +90,15 @@ exports.deletePost = (req, res, next) => {
   res.redirect('/');
 };
 
-// exports.getSinglePost = (req, res, next) => {
-//   const postId = req.params.id;
-//   Post.findById(postId).then((post) => {
-//     res.json(post);
-//   });
-// };
+exports.countPosts = (req, res, next) => {
+  Promise.all([
+    Post.countDocuments({ topic: 'javaScript' }),
+    Post.countDocuments({ topic: 'Front End' }),
+    Post.countDocuments({ topic: 'Back End' }),
+    Post.countDocuments({ topic: 'Machine Learning' }),
+  ]).then((counts) => {
+    const javaScript = counts[0];
+    const FrontEnd = counts[1];
+    res.send(counts);
+  });
+};

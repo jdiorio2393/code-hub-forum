@@ -13,23 +13,10 @@ class UserPosts extends Component {
           posts: [...this.state.posts, userPosts.data],
         });
       }
-      // console.log(this.state.posts[0].allPosts);
-      // const a = this.state.posts[0].allPosts.map((i) => console.log(i));
-      // console.log(a);
-      // console.log(this.state.posts[0][0]);
     });
   }
 
   render() {
-    // console.log('state' + this.state.posts);
-    // const items = this.state.posts.map((posts) => {
-    //   // console.log('posts' + JSON.stringify(posts));
-    //   posts.allPosts.map((items) => {
-    //     // console.log(items);
-    //     return <h1>AHHHH</h1>;
-    //   });
-    // });
-    // console.log(this.state);
     const allPosts = this.state.posts.map((items) => {
       return items.map((i, index) => {
         // console.log(i);

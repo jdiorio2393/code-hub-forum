@@ -40,7 +40,13 @@ function App() {
         <Route exact path='/user-signup' component={Signup} />
         <Route exact path='/user-login' component={Login} />
         <Route exact path='/view-threads' component={AllPosts} />
-        <Route exact path='/user' render={User} />
+        <Route
+          exact
+          path='/user'
+          render={(props) => (
+            <User {...props} user={session.name} email={session.email} />
+          )}
+        />
         <Route exact path='/edit/:id' component={Edit} />
         <Route
           exact

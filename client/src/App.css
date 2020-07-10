@@ -5,6 +5,14 @@
   /* box-shadow: 1px 1px 15px #00000030; */
 }
 
+.nav-item {
+  z-index: 999;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
 .logout {
   background-color: #ffffff00;
   opacity: 1;
@@ -33,6 +41,34 @@
   justify-self: center !important;
 }
 
+@media only screen and (max-width: 600px) {
+  .post-container {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px !important;
+    justify-items: left;
+    transform: translate(-6px, 0px);
+  }
+
+  .post-container div:nth-child(4) {
+    justify-self: center !important;
+  }
+
+  .post-container div:nth-child(3) {
+    justify-self: center !important;
+  }
+  .post-container div:nth-child(2) {
+    justify-self: center !important;
+  }
+  .post-container div:nth-child(1) {
+    justify-self: center !important;
+  }
+}
+
+.card-img-overlay {
+  position: relative;
+}
+
 .featured {
   padding-top: 30px;
   padding-bottom: 10px;
@@ -43,6 +79,16 @@
   /* width: 18rem !important; */
   box-shadow: 1px 1px 9px #0000004a;
   display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid-card {
+    width: 11rem !important;
+    max-height: 160px;
+  }
+  h5 {
+    font-size: 1rem !important;
+  }
 }
 
 .card-img-top {
@@ -65,6 +111,12 @@
   justify-self: stretch;
 }
 
+@media only screen and (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+}
+
 .thread {
   margin: auto;
   display: block;
@@ -74,6 +126,7 @@
 
 .input-container {
   padding-top: 5%;
+  transform: translate(25%);
 }
 
 input {
@@ -127,7 +180,7 @@ small {
 .user-container {
   display: grid;
   grid-template-columns: 0.6fr 1.8fr;
-  grid-template-rows: 1.3fr 1.3fr;
+  grid-template-rows: 1.3fr;
   gap: 1px 1px;
   grid-template-areas: 'top Profile' 'bottom Profile';
 }
@@ -172,6 +225,16 @@ small {
   grid-template-rows: 1fr;
   gap: 1px 1px;
   grid-template-areas: 'main sidebar';
+}
+
+@media only screen and (max-width: 600px) {
+  .home-container {
+    grid-template-columns: 1fr;
+  }
+  .btn-primary {
+    margin-left: 0 !important;
+    margin-bottom: 5px;
+  }
 }
 
 .main {

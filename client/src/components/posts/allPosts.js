@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import Thread from './thread';
+import Sidebar from '../../layout/sidebar';
 
 class AllPosts extends Component {
   state = {
@@ -16,7 +17,7 @@ class AllPosts extends Component {
   }
 
   render() {
-    const posts = this.state.threads.slice(-4).map((items) => {
+    const posts = this.state.threads.map((items) => {
       return (
         <Thread
           title={items.title}
@@ -30,20 +31,17 @@ class AllPosts extends Component {
     });
     return (
       <Fragment>
-        <div class='sticky'>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
-          <p>sticky sidebar</p>
+        <div style={{ backgroundColor: '#dae0e6' }}>
+          <div className='threads container pt-3'>
+            <div className='featured'>View All Posts</div>
+            <div className='home-container'>
+              <div>{posts}</div>
+              <div className='sidebar'>
+                <Sidebar />
+              </div>
+            </div>
+          </div>
         </div>
-        <div className='threads'>{posts}</div>
       </Fragment>
     );
   }
